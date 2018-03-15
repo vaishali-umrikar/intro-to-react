@@ -25,6 +25,20 @@
        ReactDOM.render(
          <Greeting />, document.getElementById('app')
        );
+
+       class Message extends React.Component {
+         render() {
+           return (
+             <div>
+               <p>I added a React component!</p>
+             </div>
+           );
+         }
+       }
+
+       ReactDOM.render(
+         <Message />, document.getElementById('app')
+       );
     </script>
   </body>
 </html>
