@@ -6,6 +6,7 @@
   <body>
 
     <div id="app"></div>
+    <div id="message"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
@@ -16,28 +17,35 @@
          render() {
            return (
              <div>
-               <h1>Hello World!</h1>
+               <h1>Hello {this.props.name}!</h1>
              </div>
            );
          }
        }
 
        ReactDOM.render(
-         <Greeting />, document.getElementById('app')
+         <Greeting name="Everyone"/>, document.getElementById('app')
        );
 
-       class Message extends React.Component {
+       class Location extends React.Component {
+         constructor(props){
+           super(props);
+           this.state = {
+             city: Chicago
+           }
+         }
+
          render() {
            return (
              <div>
-               <p>I added a React component!</p>
+               <h2>Current location: {this.state.city}</h2>
              </div>
            );
          }
        }
 
        ReactDOM.render(
-         <Message />, document.getElementById('app')
+         <Location/>, document.getElementById('message')
        );
     </script>
   </body>
